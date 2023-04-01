@@ -16,12 +16,12 @@
         <Label Content="說明文字" HorizontalAlignment="Left" Margin="82,290,0,0" VerticalAlignment="Top" Width="133" Height="32" Background="#FFF2EEA1"/>
         <TextBox x:Name="txtCM" HorizontalAlignment="Left" Height="23" Margin="82,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtCM_KeyUp"/>
         <TextBox x:Name="txtM" HorizontalAlignment="Left" Height="23" Margin="260,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtM_KeyUp"/>
-        <TextBox x:Name="txtKM" HorizontalAlignment="Left" Height="23" Margin="444,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtIn" HorizontalAlignment="Left" Height="23" Margin="82,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtFt" HorizontalAlignment="Left" Height="23" Margin="260,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtYard" HorizontalAlignment="Left" Height="23" Margin="444,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtKM" HorizontalAlignment="Left" Height="23" Margin="444,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtKM_KeyUp"/>
+        <TextBox x:Name="txtIn" HorizontalAlignment="Left" Height="23" Margin="82,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtIn_KeyUp"/>
+        <TextBox x:Name="txtFt" HorizontalAlignment="Left" Height="23" Margin="260,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtFt_KeyUp"/>
+        <TextBox x:Name="txtYard" HorizontalAlignment="Left" Height="23" Margin="444,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtYard_KeyUp"/>
         <TextBox x:Name="txtInfo" HorizontalAlignment="Left" Height="23" Margin="82,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="482"/>
-        <Button x:Name="btnAllClear" Content="清除" HorizontalAlignment="Left" Margin="82,55,0,0" VerticalAlignment="Top" Width="75" Background="#FFC5EBB0" BorderBrush="#FFE5DFDF" Height="25"/>
+        <Button x:Name="btnAllClear" Content="清除" HorizontalAlignment="Left" Margin="82,55,0,0" VerticalAlignment="Top" Width="75" Background="#FFC5EBB0" BorderBrush="#FFE5DFDF" Height="25" Click="btnAllClear_Click"/>
 
     </Grid>
 </Window>

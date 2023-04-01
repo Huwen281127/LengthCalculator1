@@ -20,33 +20,131 @@ namespace LengthCalculator1
     /// </summary>
     public partial class MainWindow : Window
     {
+        string strInput; 
+        double douOutput;
+
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        private void caculateAnswer(int _kind, double _value)
+        {
+            if (_kind != 0)
+                txtCM.Text = string.Format("{0:0.##########}", _value);
+            if (_kind != 1)
+                txtM.Text = string.Format("{0:0.##########}", _value / 100);
+            if (_kind != 2)
+                txtKM.Text = string.Format("{0:0.##########}", _value / 100000);
+            if (_kind != 3)
+                txtIn.Text = string.Format("{0:0.##########}", _value / 2.54);
+            if (_kind != 4)
+                txtFt.Text = string.Format("{0:0.##########}", _value / 30.48);
+            if (_kind != 5)
+                txtYard.Text = string.Format("{0:0.##########}", _value / 91.44);
+        }
         private void txtCM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douCM;
-            douCM = Convert.ToDouble(txtCM.Text);
-         
-            txtM.Text = string.Format("{0:0.##########}", douCM / 100);
-            txtKM.Text = string.Format("{0:0.##########}", douCM / 100000);
-            txtIn.Text = string.Format("{0:0.##########}", douCM / 2.54);
-            txtFt.Text = string.Format("{0:0.##########}", douCM / 30.48);
-            txtYard.Text = string.Format("{0:0.##########}", douCM / 91.44);
+            strInput = txtCM.Text; 
+
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                //txtM.Text = string.Format("{0:0.##########}", douOutput / 100);
+                //txtKM.Text = string.Format("{0:0.##########}", douOutput / 100000);
+                //txtIn.Text = string.Format("{0:0.##########}", douOutput / 2.54);
+                //txtFt.Text = string.Format("{0:0.##########}", douOutput / 30.48);
+                //txtYard.Text = string.Format("{0:0.##########}", douOutput / 91.44);
+                caculateAnswer(0, douOutput);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtCM.Text = "";
+            }
         }
 
         private void txtM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douM; 
-            douM = Convert.ToDouble(txtM.Text); 
+            strInput = txtM.Text;
 
-            txtCM.Text = string.Format("{0:0.##########}", douM / 0.01);
-            txtKM.Text = string.Format("{0:0.##########}", douM / 1000);
-            txtIn.Text = string.Format("{0:0.##########}", douM / 0.0254);
-            txtFt.Text = string.Format("{0:0.##########}", douM / 0.3048);
-            txtYard.Text = string.Format("{0:0.##########}", douM / 0.9144);
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(1, douOutput * 100);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtM.Text = "";
+            }
+        }
+
+        private void txtKM_KeyUp(object sender, KeyEventArgs e)
+        {
+            strInput = txtKM.Text;
+
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(2, douOutput * 100000);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtKM.Text = "";
+            }
+        }
+
+        private void txtIn_KeyUp(object sender, KeyEventArgs e)
+        {
+            strInput = txtIn.Text;
+
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(3, douOutput * 2.54);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtIn.Text = "";
+            }
+        }
+
+        private void txtFt_KeyUp(object sender, KeyEventArgs e)
+        {
+            strInput = txtFt.Text;
+
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(4, douOutput * 30.48);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtFt.Text = "";
+            }
+        }
+
+        private void txtYard_KeyUp(object sender, KeyEventArgs e)
+        {
+            strInput = txtYard.Text;
+
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(5, douOutput * 91.44);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtYard.Text = "";
+            }
+        }
+
+        private void btnAllClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtCM.Text = "";
+            txtM.Text = "";
+            txtKM.Text = "";
+            txtIn.Text = "";
+            txtFt.Text = "";
+            txtYard.Text = "";
         }
     }
 }
